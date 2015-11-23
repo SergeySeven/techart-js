@@ -1,0 +1,49 @@
+
+	<script>
+
+	var arrayforsort = [2,1,3,5,4,6,9,7,8,0];
+
+	function quickSort(arrayforsort) {
+		
+		if(arrayforsort.length == 0){
+			return null;
+		}
+
+		 var leftArray = [];
+		 var rightArray = [];
+		 var supportElement  = arrayforsort[0]; 
+		 
+		 delete arrayforsort[0];
+
+		 for (var i = 1; i < arrayforsort.length; i++) {
+ 	
+		 	if(arrayforsort[i] < supportElement) {
+
+		 		leftArray[leftArray.length] = arrayforsort[i];
+
+		 	}else {
+
+		 		rightArray[rightArray.length] = arrayforsort[i];
+		 	}
+
+		 }
+
+		 var resultsort = [];
+
+		 if(leftArray.length != 0 ){
+		 	resultsort.push(quickSort(leftArray));
+		 }
+
+		 resultsort.push(supportElement);
+
+		 if(rightArray.length != 0 ){
+		 	resultsort.push(quickSort(rightArray));
+		}
+
+		return JSON.parse( "[" + resultsort.join(',') + "]");
+	} 	
+
+	console.log(quickSort(arrayforsort));
+
+	</script>
+

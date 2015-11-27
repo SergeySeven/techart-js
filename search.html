@@ -1,0 +1,27 @@
+
+	<script>
+
+	var arrayElement = [2,3,5];	
+
+	var isCondition =  function checkCondition (elemetArray) {
+
+		return  elemetArray >= 5;
+	}
+	
+	function search (array,condition) {
+
+		
+		for(var i = 0; i < array.length; i++){
+
+			if(isCondition(array[i])){
+				return array[i];
+			}
+		}
+
+		return 'Array does not have elements satisfying condition' ;
+	}
+
+	console.log(search(arrayElement,isCondition));
+
+	</script>
+
